@@ -1,0 +1,98 @@
+﻿@{ ViewData["Title"] = "Add Crash"; }
+
+@model Crash
+
+<div class="text-center">
+    <h3>Add Crash</h3>
+
+    <!--Create new crash form-->
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+
+        <label asp-for="Crash_Datetime">Date and Time of Crash (ex. MM-dd-yy HH-mm-ss AM/PM): </label>
+        <input  asp-for="Crash_Datetime" /><br />
+
+        <label asp-for="Route">Crash Route: </label>
+        <input asp-for="Route" /><br />
+
+        <label asp-for="Milepoint">Crash Milepoint: </label>
+        <input type="number" asp-for="Milepoint" /><br />
+
+        <label asp-for="Lat_Utm_Y">Latitude of Crash: </label>
+        <input type="number" asp-for="Lat_Utm_Y" /><br />
+
+        <label asp-for="Long_Utm_X">Longitude of Crash: </label>
+        <input type="number" asp-for="Long_Utm_X" /><br />
+
+        <label asp-for="Main_Road_Name">Main Road of Crash: </label>
+        <input asp-for="Main_Road_Name" /><br />
+
+        <label asp-for="City">City of Crash: </label>
+        <input asp-for="City" /><br />
+
+        <label asp-for="County_Name">County of Crash: </label>
+        <input asp-for="County_Name" /><br />
+
+        <label asp-for="Crash_Severity_Id">Severity of Crash: </label>
+        <input type="number" asp-for="Crash_Severity_Id" /><br />
+
+        <label asp-for="Work_Zone_Related">Workzone Related? </label>
+        <input type="checkbox" asp-for="Work_Zone_Related" /><br />
+
+        <label asp-for="Pedestrian_Involved">Pedestrian Involved? </label>
+        <input type="checkbox" asp-for="Pedestrian_Involved" /><br />
+
+        <label asp-for="Bicyclist_Involved">Bicyclist Involved? </label>
+        <input type="checkbox" asp-for="Bicyclist_Involved" /><br />
+
+        <label asp-for="Motorcycle_Involved">Motorcycle Involved? </label>
+        <input type="checkbox" asp-for="Motorcycle_Involved" /><br />
+
+        <label asp-for="Improper_Restraint">Improper Restraint? </label>
+        <input type="checkbox" asp-for="Improper_Restraint" /><br />
+
+        <label asp-for="Unrestrained">Unrestrained? </label>
+        <input type="checkbox" asp-for="Unrestrained" /><br />
+
+        <label asp-for="DUI">DUI? </label>
+        <input type="checkbox" asp-for="DUI" /><br />
+
+        <label asp-for="Intersection_Related">Intersection Related? </label>
+        <input type="checkbox" asp-for="Intersection_Related" /><br />
+
+        <label asp-for="Wild_Animal_Related">Wild Animal Related? </label>
+        <input type="checkbox" asp-for="Wild_Animal_Related" /><br />
+
+        <label asp-for="Domestic_Animal_Related">Domestic Animal Related? </label>
+        <input type="checkbox" asp-for="Domestic_Animal_Related" /><br />
+
+        <label asp-for="Overturn_Rollover">Overturn or Rollover? </label>
+        <input type="checkbox" asp-for="Overturn_Rollover" /><br />
+
+        <label asp-for="Commercial_Motor_Veh_Involved">Commercial Motor Vehicle Involved? </label>
+        <input type="checkbox" asp-for="Commercial_Motor_Veh_Involved" /><br />
+
+        <label asp-for="Teenage_Driver_Involved">Teenage Driver Involved? </label>
+        <input type="checkbox" asp-for="Teenage_Driver_Involved" /><br />
+
+        <label asp-for="Older_Driver_Involved">Older Driver Involved? </label>
+        <input type="checkbox" asp-for="Older_Driver_Involved" /><br />
+
+        <label asp-for="Night_Dark_Condition">Night/Dark Conditions? </label>
+        <input type="checkbox" asp-for="Night_Dark_Condition" /><br />
+
+        <label asp-for="Single_Vehicle">Single Vehicle Involved in Crash? </label>
+        <input type="checkbox" asp-for="Single_Vehicle" /><br />
+
+        <label asp-for="Distracted_Driving">Distracted Driving Involved? </label>
+        <input type="checkbox" asp-for="Distracted_Driving" /><br />
+
+        <label asp-for="Drowsy_Driving">Drowsy Driving Involved? </label>
+        <input type="checkbox" asp-for="Drowsy_Driving" /><br />
+
+        <label asp-for="Roadway_Departure">Roadway Departure Involved? </label>
+        <input type="checkbox" asp-for="Roadway_Departure" /><br />
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
