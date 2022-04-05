@@ -2,6 +2,37 @@
 
 @model CrashesViewModel
 
-<div page-model="@Model.PageInfo" page-action="Summary" page-classes-enabled="true"
-     page-class="btn" page-class-normal="btn-outline-dark"
-     page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
+<div class="text-center">
+    @if (ViewBag.PageNum == 1)
+    {
+        <a disabled class="btn btn-secondary text-light">First Page</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="1">First Page</a>
+    }
+    @if (ViewBag.PageNum <= 1)
+    {
+        <a disabled class="btn btn-secondary text-light">Back</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum - 1)">Back</a>
+    }
+    @if (ViewBag.PageNum >= ViewBag.TotalPages)
+    {
+        <a disabled class="btn btn-secondary text-light">Next</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum + 1)">Next</a>
+    }
+    @if (ViewBag.PageNum == ViewBag.TotalPages)
+    {
+        <a disabled class="btn btn-secondary text-light">Last Page</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.TotalPages)">Last Page</a>
+    }
+</div>

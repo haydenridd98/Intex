@@ -28,48 +28,42 @@ namespace Intex.Controllers
 
         public IActionResult Summary(int pageNum = 1)
         {
-            int pageSize = 10;
+            int pageSize = 50;
 
-            var x = new CrashesViewModel
+            ViewBag.PageNum = pageNum;
+            ViewBag.TotalPages = (repo.Crashes.Count() / pageSize);
+
+
+            var cvm = new CrashesViewModel
             {
                 Crashes = repo.Crashes
-                .OrderBy(c => c.Crash_Id)
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize),
-
-                PageInfo = new PageInfo
-                {
-                    TotalNumCrashes = repo.Crashes.Count(),
-                    CrashesPerPage = pageSize,
-                    CurrentPage = pageNum
-                }
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize)
             };
-            
-            return View(x);
+
+            return View(cvm);
+
         }
 
         
         // Admin page with CRUD funcionality
         public IActionResult AdminTable(int pageNum = 1)
         {
-            int pageSize = 10;
+            
+            int pageSize = 50;
 
-            var x = new CrashesViewModel
+            ViewBag.PageNum = pageNum;
+            ViewBag.TotalPages = (repo.Crashes.Count() / pageSize);
+
+            var cvm = new CrashesViewModel
             {
                 Crashes = repo.Crashes
-                .OrderBy(c => c.Crash_Id)
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize),
-
-                PageInfo = new PageInfo
-                {
-                    TotalNumCrashes = repo.Crashes.Count(),
-                    CrashesPerPage = pageSize,
-                    CurrentPage = pageNum
-                }
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize)
             };
 
-            return View(x);
+            return View(cvm);
+
         }
         
 
