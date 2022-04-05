@@ -26,8 +26,13 @@ namespace Intex
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
-           // services.AddScoped<ICrashRepository, EFCrashRepository>();
+
+            services.AddDbContext<CrashDbContext>(options =>
+            {
+                options.UseMySql(Configuration["ConnectionStrings:IntexDBConnection"]);
+            });
+            services.AddScoped<ICrashRepository, EFCrashRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

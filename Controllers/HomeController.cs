@@ -12,12 +12,13 @@ namespace Intex.Controllers
 {
     public class HomeController : Controller
     {
-        /* private ICrashRepository repo { get; set; }
+        private ICrashRepository repo { get; set; }
+
         public HomeController(ICrashRepository cr)
         {
             repo = cr;
         }
-        */
+        
 
         // Index page that takes crash id
         public IActionResult Index()
@@ -45,10 +46,6 @@ namespace Intex.Controllers
             };
             
             return View(x);
-
-            /* 
-            return View();
-            */
         }
 
         
@@ -74,7 +71,7 @@ namespace Intex.Controllers
 
             return View(x);
         }
-        /**/
+        
 
         [HttpGet]
         public IActionResult Create()
@@ -82,7 +79,7 @@ namespace Intex.Controllers
             return View();
         }
 
-        /*
+        
         // Create a crash
         [HttpPost]
         public IActionResult Create(Crash c)
@@ -90,9 +87,9 @@ namespace Intex.Controllers
             repo.CreateCrash(c);
             return RedirectToAction("Index", 0);
         }
-        */
+        
 
-        /*
+        
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -108,6 +105,7 @@ namespace Intex.Controllers
             return RedirectToAction("Index", 0);
         }
 
+
         [HttpGet]
         public IActionResult Delete(int id)
         {
@@ -122,6 +120,6 @@ namespace Intex.Controllers
             repo.DeleteCrash(c);
             return RedirectToAction("Index", 0);
         }
-        */
+        
     }
 }
