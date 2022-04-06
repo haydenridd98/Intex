@@ -2,78 +2,37 @@
 
 @model CrashesViewModel
 
-
-<div class="row m-1 p-1">
-
-    <!--Table that shows crashes and allows edit / delete-->
-    <table class="table table-sm table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Crash ID</th>
-                <th>Crash Datetime</th>
-                <th>Route</th>
-                <th>Milepoint</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
-                <th>Main Road Name</th>
-                <th>City</th>
-                <th>Crash Severity</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (Crash c in Model.Crashes)
-            {
-                <tr>
-                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@c.Crash_Id">@c.Crash_Id</a></td>
-                    <td>@c.Crash_Datetime </td>
-                    <td>@c.Route</td>
-                    <td>@c.Milepoint</td>
-                    <td>@c.Lat_Utm_Y</td>
-                    <td>@c.Long_Utm_X</td>
-                    <td>@c.Main_Road_Name</td>
-                    <td>@c.City</td>
-                    <td>@c.Crash_Severity_Id</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <div class="text-center">
-        @if (ViewBag.PageNum == 1)
-        {
-            <a disabled class="btn btn-secondary text-light">First Page</a>
-        }
-        else
-        {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="1">First Page</a>
-        }
-        @if (ViewBag.PageNum <= 1)
-        {
-            <a disabled class="btn btn-secondary text-light">Back</a>
-        }
-        else
-        {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum - 1)">Back</a>
-        }
-        @if (ViewBag.PageNum >= ViewBag.TotalPages)
-        {
-            <a disabled class="btn btn-secondary text-light">Next</a>
-        }
-        else
-        {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum + 1)">Next</a>
-        }
-        @if (ViewBag.PageNum == ViewBag.TotalPages)
-        {
-            <a disabled class="btn btn-secondary text-light">Last Page</a>
-        }
-        else
-        {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.TotalPages)">Last Page</a>
-        }
-    </div>
+<div class="text-center">
+    @if (ViewBag.PageNum == 1)
+    {
+        <a disabled class="btn btn-secondary text-light">First Page</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="1">First Page</a>
+    }
+    @if (ViewBag.PageNum <= 1)
+    {
+        <a disabled class="btn btn-secondary text-light">Back</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum - 1)">Back</a>
+    }
+    @if (ViewBag.PageNum >= ViewBag.TotalPages)
+    {
+        <a disabled class="btn btn-secondary text-light">Next</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum + 1)">Next</a>
+    }
+    @if (ViewBag.PageNum == ViewBag.TotalPages)
+    {
+        <a disabled class="btn btn-secondary text-light">Last Page</a>
+    }
+    else
+    {
+        <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.TotalPages)">Last Page</a>
+    }
 </div>
-
-
-    
