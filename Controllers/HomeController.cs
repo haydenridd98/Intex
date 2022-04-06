@@ -116,18 +116,9 @@ namespace Intex.Controllers
             return RedirectToAction("Index", 0);
         }
 
-<<<<<<< HEAD
         
 
 
-=======
-        public IActionResult Details(int crashId)
-        {
-            var crash = repo.Crashes
-                .FirstOrDefault(x => x.Crash_Id == crashId);
-            return View(crash);
-        }
->>>>>>> 0668fd6c580778388655dda23f6f161525f534d1
 
     }
 }

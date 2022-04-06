@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
-<<<<<<< HEAD
     <Folder Include="Migrations\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
@@ -32,12 +31,5 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Migrations\" />
     <None Remove="Views\Account\" />
-=======
-    <Folder Include="wwwroot\img\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\img\" />
->>>>>>> 0668fd6c580778388655dda23f6f161525f534d1
   </ItemGroup>
 </Project>
