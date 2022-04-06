@@ -7,7 +7,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Intex.Models.ViewModels;
-using Microsoft.AspNetCore.Identity;
 
 namespace Intex.Controllers
 {
@@ -115,10 +114,6 @@ namespace Intex.Controllers
             repo.DeleteCrash(c);
             return RedirectToAction("Index", 0);
         }
-
         
-
-
-
     }
 }
