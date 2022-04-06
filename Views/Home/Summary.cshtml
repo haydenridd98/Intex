@@ -18,25 +18,6 @@
                 <th>Main Road Name</th>
                 <th>City</th>
                 <th>Crash Severity</th>
-                <th>Work Zone Related</th>
-                <th>Pedestrian Involved</th>
-                <th>Bicyclist Involved</th>
-                <th>Motorcycle Involved</th>
-                <th>Improper Restraint</th>
-                <th>Unrestrained</th>
-                <th>DUI</th>
-                <th>Intersection Related</th>
-                <th>Wild Animal Related</th>
-                <th>Domestic Animal Related</th>
-                <th>Overturn / Rollover</th>
-                <th>Commercial Motor Vehicle Involved</th>
-                <th>Teenage Driver Involved</th>
-                <th>Older Driver Involved</th>
-                <th>Night / Dark Condition</th>
-                <th>Single Vehicle</th>
-                <th>Distracted Driving</th>
-                <th>Drowsy Driving</th>
-                <th>Roadway Departure</th>
             </tr>
         </thead>
 
@@ -44,7 +25,7 @@
             @foreach (Crash c in Model.Crashes)
             {
                 <tr>
-                    <td>@c.Crash_Id </td>
+                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@c.Crash_Id">@c.Crash_Id</a></td>
                     <td>@c.Crash_Datetime </td>
                     <td>@c.Route</td>
                     <td>@c.Milepoint</td>
@@ -53,26 +34,6 @@
                     <td>@c.Main_Road_Name</td>
                     <td>@c.City</td>
                     <td>@c.Crash_Severity_Id</td>
-                    <td>@c.Work_Zone_Related</td>
-                    <td>@c.Pedestrian_Involved</td>
-                    <td>@c.Bicyclist_Involved</td>
-                    <td>@c.Motorcycle_Involved</td>
-                    <td>@c.Improper_Restraint</td>
-                    <td>@c.Unrestrained</td>
-                    <td>@c.DUI</td>
-                    <td>@c.Intersection_Related</td>
-                    <td>@c.Wild_Animal_Related</td>
-                    <td>@c.Domestic_Animal_Related</td>
-                    <td>@c.Overturn_Rollover</td>
-                    <td>@c.Commercial_Motor_Veh_Involved</td>
-                    <td>@c.Teenage_Driver_Involved</td>
-                    <td>@c.Older_Driver_Involved</td>
-                    <td>@c.Night_Dark_Condition</td>
-                    <td>@c.Single_Vehicle</td>
-                    <td>@c.Distracted_Driving</td>
-                    <td>@c.Drowsy_Driving</td>
-                    <td>@c.Roadway_Departure</td>
-
                 </tr>
             }
         </tbody>
