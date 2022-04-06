@@ -114,6 +114,12 @@ namespace Intex.Controllers
             repo.DeleteCrash(c);
             return RedirectToAction("Index", 0);
         }
-        
+
+        public IActionResult Details(int crashId)
+        {
+            var crash = repo.Crashes
+                .FirstOrDefault(x => x.Crash_Id == crashId);
+            return View(crash);
+        }
     }
 }
