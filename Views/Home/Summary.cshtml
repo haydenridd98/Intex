@@ -60,35 +60,35 @@
     <div class="text-center">
         @if (ViewBag.PageNum == 1)
         {
-            <a disabled class="btn btn-secondary text-light">First Page</a>
+            <a disabled class="btn btn-primary text-light">First Page</a>
         }
         else
         {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="1">First Page</a>
+            <a class="btn btn-secondary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="1">First Page</a>
         }
         @if (ViewBag.PageNum <= 1)
         {
-            <a disabled class="btn btn-secondary text-light">Back</a>
+            <a disabled class="btn btn-primary text-light">Back</a>
         }
         else
         {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum - 1)">Back</a>
+            <a class="btn btn-secondary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum - 1)">Back</a>
         }
         @if (ViewBag.PageNum >= ViewBag.TotalPages)
         {
-            <a disabled class="btn btn-secondary text-light">Next</a>
+            <a disabled class="btn btn-primary text-light">Next</a>
         }
         else
         {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum + 1)">Next</a>
+            <a class="btn btn-secondary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.PageNum + 1)">Next</a>
         }
         @if (ViewBag.PageNum == ViewBag.TotalPages)
         {
-            <a disabled class="btn btn-secondary text-light">Last Page</a>
+            <a disabled class="btn btn-primary text-light">Last Page</a>
         }
         else
         {
-            <a class="btn btn-primary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.TotalPages)">Last Page</a>
+            <a class="btn btn-secondary text-light" asp-controller="Home" asp-action="Summary" asp-route-pageNum="@(ViewBag.TotalPages)">Last Page</a>
         }
     </div>
 </div>
