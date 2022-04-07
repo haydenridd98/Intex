@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Intex.Models.Crash>
+
+
+@using(Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    @Html.TextBox("searching")<input type="submit" value="Search" />
+}
+<div class="container">
+    <div class="row m-1 p-1">
+        <h2>Car Crashes in Utah</h2>
+        <h6>View car crash data by date, route, city, and severity.</h6>
+    </div>
+</div>
+<table class="table table-sm table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Crash ID</th>
+            <th>Crash Datetime</th>
+            <th>Route</th>
+            <th>Milepoint</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Main Road Name</th>
+            <th>City</th>
+            <th>County</th>
+            <th>Crash Severity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3" style="color: red">
+                    No match any document
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@item.Crash_Id" class="text-black">@item.Crash_Id</a></td>
+                    <td>@item.Crash_Datetime </td>
+                    <td>@item.Route</td>
+                    <td>@item.Milepoint</td>
+                    <td>@item.Lat_Utm_Y</td>
+                    <td>@item.Long_Utm_X</td>
+                    <td>@item.Main_Road_Name</td>
+                    <td>@item.City</td>
+                    <td>@item.County_Name</td>
+                    <td>@item.Crash_Severity_Id</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<p1>this is the search page</p1>
