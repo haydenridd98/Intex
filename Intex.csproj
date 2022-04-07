@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Infrastructure\" />
     <Folder Include="Views\Account\" />
-    <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\lib\qrcode\" />
   </ItemGroup>
 

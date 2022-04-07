@@ -13,8 +13,12 @@
 
 <body>
 
-    <div class="bg-dark text-white p-2">
-        <span class="navbar-brand m-1-2">Login here!</span>
+    <div class="container">
+        <div class="bg-dark text-white p-2">
+            <div class="navbar-brand m-2">
+                <h6>NFLS Utah Administration</h6>
+            </div>
+        </div>
     </div>
 
     <div class="m-1 p-1">
@@ -33,7 +37,7 @@
                 <input asp-for="Password" class="form-control" type="password" />
             </div>
 
-            <button class="btn btn-primary" type="submit">Log In</button>
+            <button class="btn btn-secondary" type="submit">Log In</button>
 
             <input type="hidden" asp-for="ReturnUrl" />
         </form>
