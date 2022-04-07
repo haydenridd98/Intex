@@ -29,6 +29,7 @@ namespace Intex.Controllers
 
         public IActionResult Summary(int pageNum = 1)
         {
+
             int pageSize = 50;
 
             ViewBag.PageNum = pageNum;
@@ -44,6 +45,13 @@ namespace Intex.Controllers
 
             return View(cvm);
 
+        }
+
+        public IActionResult Search(string searching)
+        {
+            
+
+            return View(repo.Crashes.Where(x => x.City.Contains(searching) || searching == null).ToList());
         }
 
 
