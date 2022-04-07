@@ -4,33 +4,48 @@
 
 @model Crash
 
-<h2>Crash ID: @Model.Crash_Id</h2>
-<br />
-<ul>
-    <li>Date and Time: @Model.Crash_Datetime</li>
-    <li>Route: @Model.Route</li>
-    <li>Milepoint: @Model.Milepoint</li>
-    <li>Latitude: @Model.Lat_Utm_Y</li>
-    <li>Longitude: @Model.Long_Utm_X</li>
-    <li>Road: @Model.Main_Road_Name</li>
-    <li>City: @Model.City</li>
-    <li>County: @Model.County_Name</li>
-    <li>Severity: @Model.Crash_Severity_Id</li>
-    <li>Work Zone Related: @Model.Work_Zone_Related</li>
-    <li>Pedestrian Involved: @Model.Pedestrian_Involved</li>
-    <li>Improper Restraint: @Model.Improper_Restraint</li>
-    <li>Unrestrained: @Model.Unrestrained</li>
-    <li>DUI: @Model.DUI</li>
-    <li>Intersection Related: @Model.Intersection_Related</li>
-    <li>Wild Animal Related: @Model.Wild_Animal_Related</li>
-    <li>Domestic Animal Related: @Model.Domestic_Animal_Related</li>
-    <li>Overturn Rollover: @Model.Overturn_Rollover</li>
-    <li>Commercial Motor Vehicle Involved: @Model.Commercial_Motor_Veh_Involved</li>
-    <li>Teenage Driver Involved: @Model.Teenage_Driver_Involved</li>
-    <li>Older Driver Involved: @Model.Older_Driver_Involved</li>
-    <li>Night/Dark Conditions: @Model.Night_Dark_Condition</li>
-    <li>Single Vehicle: @Model.Single_Vehicle</li>
-    <li>Distracted Driving: @Model.Distracted_Driving</li>
-    <li>Drowsy Driving: @Model.Drowsy_Driving</li>
-    <li>Roadway Departure: @Model.Roadway_Departure</li>
-</ul> 
+<div class="container">
+    <div class="text-justify">
+        <h2>Crash ID: @Model.Crash_Id</h2>
+        <h4>
+            Severity: @Model.Crash_Severity_Id
+        </h4>
+        <br />
+        <h4>
+            General Information
+        </h4>
+        <ul>
+            <li>Date and Time: @Model.Crash_Datetime</li>
+            <li>Route: @Model.Route</li>
+            <li>Milepoint: @Model.Milepoint</li>
+            <li>Latitude: @Model.Lat_Utm_Y</li>
+            <li>Longitude: @Model.Long_Utm_X</li>
+            <li>Road: @System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Model.Main_Road_Name.ToLower())</li>
+            <li>City: @System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Model.City.ToLower())</li>
+            <li>County: @System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(Model.County_Name.ToLower())</li>
+        </ul>
+        <h4>
+            Crash Details
+        </h4>
+        <ul>
+            <li>Work Zone Related: @Model.Work_Zone_Related</li>
+            <li>Pedestrian Involved: @Model.Pedestrian_Involved</li>
+            <li>Improper Restraint: @Model.Improper_Restraint</li>
+            <li>Unrestrained: @Model.Unrestrained</li>
+            <li>DUI: @Model.DUI</li>
+            <li>Intersection Related: @Model.Intersection_Related</li>
+            <li>Wild Animal Related: @Model.Wild_Animal_Related</li>
+            <li>Domestic Animal Related: @Model.Domestic_Animal_Related</li>
+            <li>Overturn Rollover: @Model.Overturn_Rollover</li>
+            <li>Commercial Motor Vehicle Involved: @Model.Commercial_Motor_Veh_Involved</li>
+            <li>Teenage Driver Involved: @Model.Teenage_Driver_Involved</li>
+            <li>Older Driver Involved: @Model.Older_Driver_Involved</li>
+            <li>Night/Dark Conditions: @Model.Night_Dark_Condition</li>
+            <li>Single Vehicle: @Model.Single_Vehicle</li>
+            <li>Distracted Driving: @Model.Distracted_Driving</li>
+            <li>Drowsy Driving: @Model.Drowsy_Driving</li>
+            <li>Roadway Departure: @Model.Roadway_Departure</li>
+        </ul>
+        <a class="btn btn-secondary text-light" asp-controller="Home" asp-action="Summary">Return</a>
+    </div>
+</div>

@@ -9,7 +9,7 @@
     <form method="post">
         <div asp-validation-summary="All"></div>
 
-        <label asp-for="Crash_Datetime">Date and Time of Crash (ex. MM-dd-yy HH-mm-ss AM/PM): </label>
+        <label asp-for="Crash_Datetime">Date and Time of Crash (ex. MM-dd-yy HH:mm:ss AM/PM): </label>
         <input  asp-for="Crash_Datetime" /><br />
 
         <label asp-for="Route">Crash Route: </label>
@@ -34,7 +34,15 @@
         <input asp-for="County_Name" /><br />
 
         <label asp-for="Crash_Severity_Id">Severity of Crash: </label>
-        <input type="number" asp-for="Crash_Severity_Id" /><br />
+        <select asp-for="Crash_Severity_Id">
+            <option value="No Injury">No Injury</option>
+            <option value="Possible Injury">Possible Injury</option>
+            <option value="Suspected Minor Injury">Suspected Minor Injury</option>
+            <option value="Suspected Serious Injury">Suspected Serious Injury</option>
+            <option value="Fatal">Fatal</option>
+        </select>
+        <br />
+
 
         <label asp-for="Work_Zone_Related">Workzone Related? </label>
         <input type="checkbox" asp-for="Work_Zone_Related" /><br />

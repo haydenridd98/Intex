@@ -27,9 +27,16 @@ namespace Intex.Controllers
 
 
         [HttpGet]
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login(string? returnUrl)
         {
-            return View(new LoginModel { ReturnUrl = returnUrl });
+            if (!String.IsNullOrEmpty(returnUrl)){
+                return View(new LoginModel { ReturnUrl = returnUrl });
+            }
+            else
+            {
+                return View(new LoginModel { ReturnUrl = "/Home/AdminTable" });
+            }
+                
         }
 
         [HttpPost]
