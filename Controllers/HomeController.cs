@@ -112,7 +112,7 @@ namespace Intex.Controllers
         public IActionResult Delete(Crash c)
         {
             repo.DeleteCrash(c);
-            return RedirectToAction("Index", 0);
+            return RedirectToAction("AdminTable", 0);
         }
 
         public IActionResult Details(int crashId)
