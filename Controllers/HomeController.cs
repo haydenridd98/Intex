@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Intex.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Intex.Controllers
 {
@@ -45,11 +46,11 @@ namespace Intex.Controllers
 
         }
 
-        
+
         // Admin page with CRUD funcionality
+        [Authorize]
         public IActionResult AdminTable(int pageNum = 1)
         {
-            
             int pageSize = 50;
 
             ViewBag.PageNum = pageNum;
@@ -65,7 +66,7 @@ namespace Intex.Controllers
             return View(cvm);
 
         }
-        
+
 
         [HttpGet]
         public IActionResult Create()

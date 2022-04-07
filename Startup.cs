@@ -58,16 +58,24 @@ namespace Intex
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
 
-            app.UseAuthorization();
-            app.UseAuthentication();
+
+
+
+
 
             app.Use(async (context, next) =>
             {
                 context.Response.Headers.Add("Content-Security-Policy", "default-src 'self';");
                 await next();
             });
+
+
+            app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+
 
             app.UseEndpoints(endpoints =>
             {
