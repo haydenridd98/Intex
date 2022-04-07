@@ -79,7 +79,7 @@ namespace Intex.Controllers
         public IActionResult Create(Crash c)
         {
             repo.CreateCrash(c);
-            return RedirectToAction("Index", 0);
+            return RedirectToAction("AdminTable", 0);
         }
         
 
@@ -96,7 +96,7 @@ namespace Intex.Controllers
         public IActionResult Edit(Crash c)
         {
             repo.SaveCrash(c);
-            return RedirectToAction("Index", 0);
+            return RedirectToAction("AdminTable", 0);
         }
 
 
