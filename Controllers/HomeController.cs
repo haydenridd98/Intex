@@ -27,23 +27,32 @@ namespace Intex.Controllers
             return View();
         }
 
-        public IActionResult Summary(int pageNum = 1)
+//summary
+        public IActionResult Summary(string searching, int pageNum = 1)
         {
+
             int pageSize = 50;
 
             ViewBag.PageNum = pageNum;
             ViewBag.TotalPages = (repo.Crashes.Count() / pageSize);
 
-
             var cvm = new CrashesViewModel
             {
                 Crashes = repo.Crashes
                     .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize)
+                    .Take(pageSize).Where(x=> x.City.Contains(searching) || searching == null)
             };
+
+            //Where(x => x.City.Contains(searching) || x.County_Name.Contains(searching) || searching == null).ToList())
 
             return View(cvm);
 
+        }
+
+//search functinoality 
+        public IActionResult Search(string searching)
+        {  
+            return View(repo.Crashes.Where(x => x.City.Contains(searching) || x.County_Name.Contains(searching) || searching == null).ToList());
         }
 
 

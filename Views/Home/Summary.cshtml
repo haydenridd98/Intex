@@ -2,12 +2,23 @@
 
 @model CrashesViewModel
 
+<<<<<<< HEAD
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    @Html.TextBox("searching")
+    <input type="submit" value="Search" />
+}
+
+
+=======
 <div class="container">
     <div class="row m-1 p-1">
         <h2>Car Crashes in Utah</h2>
         <h6>View car crash data by date, route, city, and severity.</h6>
     </div>
 </div>
+>>>>>>> master
 <div class="row m-1 p-1">
 
     <!--Table that shows crashes and allows edit / delete-->
