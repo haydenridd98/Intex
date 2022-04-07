@@ -26,12 +26,13 @@ namespace Intex.Controllers
             return View();
         }
 
-        public IActionResult Summary(int pageNum = 1)
+        public IActionResult Summary(string sortOrder, string searchString, int pageNum = 1)
         {
             int pageSize = 50;
 
             ViewBag.PageNum = pageNum;
             ViewBag.TotalPages = (repo.Crashes.Count() / pageSize);
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
 
 
             var cvm = new CrashesViewModel
