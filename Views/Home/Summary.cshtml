@@ -2,11 +2,16 @@
 
 @model CrashesViewModel
 
-
+<div class="container">
+    <div class="row m-1 p-1">
+        <h2>Car Crashes in Utah</h2>
+        <h6>View car crash data by date, route, city, and severity.</h6>
+    </div>
+</div>
 <div class="row m-1 p-1">
 
     <!--Table that shows crashes and allows edit / delete-->
-    <table class="table table-sm table-bordered table-striped">
+    <table class="table table-sm table-bordered table-striped table-hover">
         <thead>
             <tr>
                 <th>Crash ID</th>
@@ -25,15 +30,15 @@
             @foreach (Crash c in Model.Crashes)
             {
                 <tr>
-                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@c.Crash_Id">@c.Crash_Id</a></td>
+                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@c.Crash_Id" class="text-black">@c.Crash_Id</a></td>
                     <td>@c.Crash_Datetime </td>
                     <td>@c.Route</td>
                     <td>@c.Milepoint</td>
                     <td>@c.Lat_Utm_Y</td>
                     <td>@c.Long_Utm_X</td>
-                    <td>@c.Main_Road_Name</td>
-                    <td>@c.City</td>
-                    <td>@c.Crash_Severity_Id</td>
+                    <td>@System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.Main_Road_Name.ToLower())</td>
+                    <td>@System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.City.ToLower())</td>
+                    <td>@System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.County_Name.ToLower())</td>
                 </tr>
             }
         </tbody>
