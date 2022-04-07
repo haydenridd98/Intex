@@ -41,9 +41,7 @@ namespace Intex
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDBContext>();
 
-            services.AddSingleton<InferenceSession>(
-                new InferenceSession("Model/california_housing.onnx")
-            );
+            
 
         }
 
