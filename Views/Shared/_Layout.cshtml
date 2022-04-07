@@ -6,9 +6,45 @@
     <title>@ViewData["Title"] - Intex</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <script src="~/js/scripts.js"></script>
 </head>
 <body>
-    <header>
+    <!--Top bar navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Need4Less Speed</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"> <a class="nav-link py-3 px-0 px-lg-3 rounded" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" asp-area="" asp-controller="Home" asp-action="Summary">Summary</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <!-- Masthead Heading-->
+            <!-- Icon Divider-->
+            @RenderBody()
+            <!--<div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>-->
+
+        </div>
+    </header>
+
+    <!--<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Intex</a>
@@ -22,21 +58,21 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Summary">Summary</a>
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded" asp-area="" asp-controller="Home" asp-action="Summary">Summary</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container">
+    </header>-->
+    <div class="container" style="text-align: center;">
         <main role="main" class="pb-3">
-            @RenderBody()
+           
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer style="text-align: center; background-color: navy;">
+        <div style="text-align: center; background-color: navy;">
             &copy; 2022 - Intex - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

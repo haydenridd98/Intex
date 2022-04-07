@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Intex.Models;
 using Intex.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,12 +16,15 @@ namespace Intex.Controllers
     {
         private UserManager<IdentityUser> userManager;
         private SignInManager<IdentityUser> signInManager;
+        private ICrashRepository repo { get; set; }
 
         public AccountController(UserManager<IdentityUser> um, SignInManager<IdentityUser> sim)
         {
             userManager = um;
             signInManager = sim;
         }
+
+
 
         [HttpGet]
         public IActionResult Login(string returnUrl)

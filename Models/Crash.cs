@@ -29,7 +29,7 @@ namespace Intex.Models
 
         public string County_Name { get; set; }
 
-        public int? Crash_Severity_Id { get; set; }
+        public string Crash_Severity_Id { get; set; }
 
         public bool Work_Zone_Related { get; set; }
 
