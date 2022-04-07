@@ -9,8 +9,8 @@ namespace Intex.Models
 {
     public static class IdentitySeedData
     {
-        private const string adminUser = "admin";
-        private const string adminPassword = "Admin123!";
+        private const string adminUser = "Rushee";
+        private const string adminPassword = "Rushee123!";
 
 
         public static async void EnsurePopulated(IApplicationBuilder app)
@@ -33,8 +33,8 @@ namespace Intex.Models
             if (user == null)
             {
                 user = new IdentityUser(adminUser);
-                user.Email = "admin@yeet.com";
-                user.PhoneNumber = "555-1234";
+                user.Email = "rushee@yeet.com";
+                user.PhoneNumber = "555-1235";
 
                 await userManager.CreateAsync(user, adminPassword);
             }
