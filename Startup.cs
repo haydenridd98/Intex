@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.ML.OnnxRuntime;
 
 namespace Intex
 {
@@ -39,6 +40,10 @@ namespace Intex
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDBContext>();
+
+            services.AddSingleton<InferenceSession>(
+                new InferenceSession("Model/california_housing.onnx")
+            );
 
         }
 
