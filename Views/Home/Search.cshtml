@@ -4,8 +4,7 @@
 @model IEnumerable<Intex.Models.Crash>
 
 
-<br /><br />
-@using(Html.BeginForm("Summary", "Home", FormMethod.Get))
+@using(Html.BeginForm("Search", "Home", FormMethod.Get))
 {
     @Html.TextBox("searching")<input type="submit" value="Search" />
 }
@@ -26,6 +25,7 @@
             <th>Longitude</th>
             <th>Main Road Name</th>
             <th>City</th>
+            <th>County</th>
             <th>Crash Severity</th>
         </tr>
     </thead>
@@ -43,7 +43,7 @@
             foreach (var item in Model)
             {
                 <tr>
-                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@item.Crash_Id">@item.Crash_Id</a></td>
+                    <td><a asp-controller="Home" asp-action="Details" asp-route-crashId="@item.Crash_Id" class="text-black">@item.Crash_Id</a></td>
                     <td>@item.Crash_Datetime </td>
                     <td>@item.Route</td>
                     <td>@item.Milepoint</td>
@@ -51,6 +51,7 @@
                     <td>@item.Long_Utm_X</td>
                     <td>@item.Main_Road_Name</td>
                     <td>@item.City</td>
+                    <td>@item.County_Name</td>
                     <td>@item.Crash_Severity_Id</td>
                 </tr>
             }

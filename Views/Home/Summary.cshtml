@@ -30,6 +30,7 @@
                 <th>Longitude</th>
                 <th>Main Road Name</th>
                 <th>City</th>
+                <th>County</th>
                 <th>Crash Severity</th>
             </tr>
         </thead>
@@ -44,9 +45,13 @@
                     <td>@c.Milepoint</td>
                     <td>@c.Lat_Utm_Y</td>
                     <td>@c.Long_Utm_X</td>
-                    <td>@System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.Main_Road_Name.ToLower())</td>
-                    <td>@System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.City.ToLower())</td>
-                    <td>@System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.County_Name.ToLower())</td>
+                    <td>@c.Main_Road_Name</td>
+                    <td>@c.City</td>
+                    <td>@c.County_Name</td>
+                    <td>@c.Crash_Severity_Id</td>
+                    <!--<td>System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.Main_Road_Name.ToLower())</td>
+                    <td>System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.City.ToLower())</td>
+                    <td>System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(c.County_Name.ToLower())</td>-->
                 </tr>
             }
         </tbody>
