@@ -27,7 +27,7 @@ namespace Intex.Controllers
 
 
         [HttpGet]
-        public IActionResult Login(string? returnUrl)
+        public IActionResult Login(string returnUrl)
         {
             if (!String.IsNullOrEmpty(returnUrl)){
                 return View(new LoginModel { ReturnUrl = returnUrl });
