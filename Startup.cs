@@ -42,7 +42,7 @@ namespace Intex
                 .AddEntityFrameworkStores<AppIdentityDBContext>();
 
             services.AddSingleton<InferenceSession>(
-                new InferenceSession("Model/california_housing.onnx")
+                new InferenceSession("wwwroot/mldt_intex.onnx")
             );
 
         }
