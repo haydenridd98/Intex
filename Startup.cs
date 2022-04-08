@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.ML.OnnxRuntime;
+using Microsoft.AspNetCore.Http;
 
 namespace Intex
 {
@@ -39,11 +39,16 @@ namespace Intex
                 options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDBContext>();
+                .AddEntityFrameworkStores<AppIdentityDBContext>()
+                    .AddDefaultTokenProviders()
+                    .AddDefaultUI()
+                    .AddEntityFrameworkStores<AppIdentityDBContext>();
 
-            services.AddSingleton<InferenceSession>(
-                new InferenceSession("Model/california_housing.onnx")
-            );
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
+            services.AddSession();
+            services.AddDistributedMemoryCache();
 
         }
 
@@ -62,6 +67,11 @@ namespace Intex
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
+            
+     
+
+           
 
 
 
