@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.ML.OnnxRuntime.Tensors;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -69,5 +70,6 @@ namespace Intex.Models
 
         public bool Roadway_Departure { get; set; }
 
+        
     }
 }
