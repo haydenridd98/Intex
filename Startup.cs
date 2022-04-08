@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using Microsoft.ML.OnnxRuntime;
 
 namespace Intex
 {
@@ -49,6 +50,10 @@ namespace Intex
             services.AddServerSideBlazor();
             services.AddSession();
             services.AddDistributedMemoryCache();
+
+            services.AddSingleton<InferenceSession>(
+                new InferenceSession("wwwroot/mldt_intex.onnx")
+            );
 
         }
 
