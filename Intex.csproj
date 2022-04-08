@@ -43,4 +43,9 @@
     <Content Remove="wwwroot\img\" />
     <Content Remove="wwwroot\lib\qrcode\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Identity.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
