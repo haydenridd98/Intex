@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Calculator";
+}
+
+@model CrashData
+
+<div class="text-justify">
+    <form class="form-group" method="post" asp-controller="Inference" asp-action="Score">
+
+        <div class="form-row">
+            <label>Was a pedestrian involved?</label>
+            <input asp-for="pedestrian_involved_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was a bicyclist involved?</label>
+            <input asp-for="bicyclist_involved_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was a motorcycle involved?</label>
+            <input asp-for="motorcycle_involved_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was anyone improperly wearing a seatbelt?</label>
+            <input asp-for="improper_restraint_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was anyone not wearing a seatbelt at all?</label>
+            <input asp-for="unrestrained_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was the driver driving under the influence?</label>
+            <input asp-for="dui_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Did the accident occur in an intersection?</label>
+            <input asp-for="intersection_related_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Were there any wild animals involved?</label>
+            <input asp-for="wild_animal_related_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was a vehicle overturned or did it rollover?</label>
+            <input asp-for="overturn_rollover_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Were there any vehicles registered to a company involved?</label>
+            <input asp-for="commercial_motor_veh_involved_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was the driver older?</label>
+            <input asp-for="older_driver_involved_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was there only one vehicle involved?</label>
+            <input asp-for="single_vehicle_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was the driver distracted?</label>
+            <input asp-for="distracted_driving_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Was the driver drowsy?</label>
+            <input asp-for="drowsy_driving_True" value="" />
+        </div>
+        <div class="form-row">
+            <label>Did the car leave the road during the crash?</label>
+            <input asp-for="roadway_departure_True" value="" />
+        </div>
+
+        <button class="btn btn-secondary text-light" type="submit">Calculate</button>
+
+    </form>
+</div>
+
