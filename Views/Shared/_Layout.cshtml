@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NFLS</title>
@@ -10,10 +11,6 @@
     <link rel="stylesheet" href="~/css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <script src="~/js/scripts.js"></script>
-
-
-
-
 </head>
 <body>
     <!--Top bar navigation-->
@@ -35,18 +32,19 @@
             </div>
         </div>
     </nav>
-
+    
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
+            <!--<partial name="_LoginPartial"></partial>-->
             <!-- Masthead Avatar Image-->
             <!-- Masthead Heading-->
             <!-- Icon Divider-->
             @RenderBody()
             <!--<div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>-->
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>-->
 
         </div>
     </header>

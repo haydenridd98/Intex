@@ -40,7 +40,7 @@ namespace Intex.Controllers
             {
                 Crashes = repo.Crashes
                     .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize).Where(x=> x.City.Contains(searching) || x.County_Name.Contains(searching) || x.Crash_Severity_Id.Contains(searching) || searching == null)
+                    .Take(pageSize).Where(x=> x.City.Contains(searching) || x.County_Name.Contains(searching) || x.Crash_Severity_Id.Contains(searching) || x.Main_Road_Name.Contains(searching) || searching == null)
             }; //city, county, severity
 
             //Where(x => x.City.Contains(searching) || x.County_Name.Contains(searching) || searching == null).ToList())
@@ -52,7 +52,7 @@ namespace Intex.Controllers
 //search functinoality 
         public IActionResult Search(string searching)
         {  
-            return View(repo.Crashes.Where(x => x.City.Contains(searching) || x.County_Name.Contains(searching) || x.Crash_Severity_Id.Contains(searching) || searching == null).ToList());
+            return View(repo.Crashes.Where(x => x.City.Contains(searching) || x.County_Name.Contains(searching) || x.Crash_Severity_Id.Contains(searching) || x.Main_Road_Name.Contains(searching) || searching == null).ToList());
         }
 
 
